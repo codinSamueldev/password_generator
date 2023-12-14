@@ -53,27 +53,28 @@ if __name__ == "__main__":
 
     if user_choice == 1:
         password_generated = weak_password()
-        print("""
-                    Your password generated is: {}
+        print(f"""
+                    Your password generated is: {password_generated}
                     Password strong level: weak
-              """.format(password_generated))
+              """)
     elif user_choice == 2:
         password_generated = medium_password()
-        print("""
-                    Your password generated is: {}
+        print(f"""
+                    Your password generated is: {password_generated}
                     Password strong level: medium
-              """.format(password_generated))
+              """)
     elif user_choice == 3:
         password_generated = strong_password()
-        print("""
-                    Your password generated is: {}
+        print(f"""
+                    Your password generated is: {password_generated}
                     Password strong level: strong
-              """.format(password_generated))
+              """)
     elif user_choice == 4:
         password_generated = unhackable_password()
-        print("""
-                    Your password generated is: {}
+        print(f"""
+                    Your password generated is: {password_generated}
                     Password strong level: unhackable
-              """.format(password_generated))
+              """)
     else:
         raise ValueError("Invalid input.")
+    
