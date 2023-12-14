@@ -2,80 +2,44 @@ import random, string
 
 ### divide each ascii elements. ###
 def lowercase_abecedary():
-    lowercase_letters = string.ascii_lowercase
-
-    return lowercase_letters
+    return string.ascii_lowercase
 
 
 def uppercase_abecedary():
-    uppercase_letters = string.ascii_uppercase
-
-    return uppercase_letters
+    return string.ascii_uppercase
 
 
 def unique_characters():
-    characters = string.punctuation
-
-    return characters
+    return string.punctuation
 
 
 def digits_from_zero_to_nine():
-    digits = string.digits
-
-    return digits
+    return string.digits   
 ### end of division. ###
 
 
 # weak password will have just random digits.
 def weak_password():
-    password_list = []
-
-    for _ in range(4):
-        password = random.choice(digits_from_zero_to_nine())
-        password_list.append(password)
-
-    user_password = "".join(password_list)
-
-    return user_password
+    
+    return "".join(random.choice(digits_from_zero_to_nine()) for _ in range(4))
 
 
 # medium password will have a mix of random digits + lowercase letters.
 def medium_password():
-    password_list = []
 
-    for _ in range(8):
-        password = random.choice(digits_from_zero_to_nine() + lowercase_abecedary())
-        password_list.append(password)
-
-    user_password = "".join(password_list)
-
-    return user_password
+    return "".join(random.choice(digits_from_zero_to_nine() + lowercase_abecedary()) for _ in range(8))
 
 
 # strong password will have a mix of random digits + lowercase letters + uppercase letters.
 def strong_password():
-    password_list = []
 
-    for _ in range(12):
-        password = random.choice(uppercase_abecedary() + digits_from_zero_to_nine() + lowercase_abecedary())
-        password_list.append(password)
-
-    user_password = "".join(password_list)
-
-    return user_password
+    return "".join(random.choice(uppercase_abecedary() + digits_from_zero_to_nine() + lowercase_abecedary()) for _ in range(12))
 
 
 # unhackable password will have a mix of random digits + lowercase letters + uppercase letters + unique chars.
 def unhackable_password():
-    password_list = []
 
-    for _ in range(15):
-        password = random.choice(uppercase_abecedary() + digits_from_zero_to_nine() + lowercase_abecedary() + unique_characters())
-        password_list.append(password)
-
-    user_password = "".join(password_list)
-
-    return user_password
+    return "".join(random.choice(lowercase_abecedary() + digits_from_zero_to_nine() + uppercase_abecedary() + unique_characters()) for _ in range(15))
 
 
 if __name__ == "__main__":
